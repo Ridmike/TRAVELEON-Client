@@ -7,7 +7,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../firebaseConfig";
 import { RootStackParamList } from "../App";
 import SidePanel from "../components/SidePanel";
-// import LocationList from "../components/LocationList";
+import LocationList from "../components/LocationList";
 import { useFocusEffect } from "@react-navigation/native";
 import { useCallback } from "react";
 
@@ -124,7 +124,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
             </View>
 
             <View style={styles.cardGrid}>
-              {/* <LocationList searchQuery={searchQuery} /> */}
+              <LocationList searchQuery={searchQuery} />
             </View>
           </View>
         </ScrollView>
