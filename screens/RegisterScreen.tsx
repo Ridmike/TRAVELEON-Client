@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  StyleSheet, Text, View, Image, TextInput,
-  TouchableOpacity, Alert, ScrollView, SafeAreaView
-} from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert, ScrollView, SafeAreaView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../App';
@@ -86,7 +83,7 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({ navigation }) => {
           />
           <TextInput
             style={styles.input}
-            placeholder="www.uihut@gmail.com"
+            placeholder="leonardo@gmail.com"
             value={email}
             onChangeText={setEmail}
             keyboardType="email-address"
@@ -101,7 +98,7 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({ navigation }) => {
           <View style={styles.passwordContainer}>
             <TextInput
               style={styles.passwordInput}
-              placeholder="**********"
+              placeholder="Password"
               secureTextEntry={!isPasswordVisible}
               value={password}
               onChangeText={setPassword}
@@ -160,14 +157,20 @@ const styles = StyleSheet.create({
   backButtonContainer: {
     paddingHorizontal: 16,
     paddingTop: 10,
+    height: 80,
+    // borderWidth: 1,
   },
   backButton: {
+    position: 'absolute',
+    top: 30,
+    left: 20,
     width: 40,
     height: 40,
     borderRadius: 20,
     backgroundColor: '#f2f2f2',
     justifyContent: 'center',
     alignItems: 'center',
+    // borderWidth: 1,
   },
   logoContainer: {
     alignItems: 'center',

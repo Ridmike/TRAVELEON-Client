@@ -9,7 +9,7 @@ import TourGuidesInformation from './screens/TourGuidesInformation';
 import RestaurantDetailsScreen from './screens/RestaurentDetailsScreen';
 import EmergencyServicesDetailsScreen from './screens/EmergencyServicesDetailsScreen';
 import AdventureSportsDetailsScreen from './screens/AdventureSportsDetailsScreen';
-// import ForgotPasswordScreen from "./screens/ForgotPasswordScreen";
+import ForgotPasswordScreen from "./screens/ForgotPasswordScreen";
 // import DetailsLocation from './screens/DetailsLocation';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
@@ -43,12 +43,12 @@ export default function App() {
         <Stack.Navigator initialRouteName="Home">
           {/* <Stack.Screen name='Profile' component={Profile} options={{ headerTitle: '', headerBackTitleVisible: false }} /> */}
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-          {/* <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} /> */}
+          <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
           {/* <Stack.Screen name="Details" component={DetailsLocation} options={{ headerTitle: '', headerBackTitleVisible: false }} /> */}
           <Stack.Screen
             name="Login"
             component={LoginScreen}
-            options={{ headerTitle: '', headerBackVisible: false }}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
             name="Register"
@@ -63,7 +63,6 @@ export default function App() {
             })}
             initialParams={{ details: [], subTopic: '', headerTitle: '' }}
           />
-
 
           <Stack.Screen
             name="VehicleDetailsScreen"
@@ -85,7 +84,7 @@ export default function App() {
             name="RestaurantDetailsScreen"
             component={RestaurantDetailsScreen}
             options={({ route }: any) => ({
-              headerTitle: route.params?.headerTitle || '', // Set header title dynamically
+              headerTitle: route.params?.headerTitle || '', 
             })}
             initialParams={{ details: [], subTopic: '', headerTitle: '' }}
           />
