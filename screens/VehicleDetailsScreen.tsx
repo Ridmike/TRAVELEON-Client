@@ -4,7 +4,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-// import CreateChatRoom from "../components/CreateChatRoom";
+import CreateChatRoom from "../components/CreateChatRoom";
 import { Ionicons } from '@expo/vector-icons';
 
 // Define the type for individual vehicle item
@@ -202,7 +202,7 @@ const VehicleDetailsScreen: React.FC = () => {
                 </View>
               </View>
 
-              {/* <TouchableOpacity
+              <TouchableOpacity
                 style={styles.messageButton}
                 onPress={async () => {
                   if (isAuthenticated) {
@@ -223,7 +223,7 @@ const VehicleDetailsScreen: React.FC = () => {
               >
                 <Ionicons name="chatbubble-outline" size={20} color="#24BAEC" />
                 <Text style={styles.messageButtonText}>Message Owner</Text>
-              </TouchableOpacity> */}
+              </TouchableOpacity>
             </View>
           </View>
         ))}

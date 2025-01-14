@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, ActivityIndicator, ScrollView, Touchable
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import { useRoute, useNavigation } from "@react-navigation/native";
-// import CreateChatRoom from "../components/CreateChatRoom";
+import CreateChatRoom from "../components/CreateChatRoom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Ionicons } from '@expo/vector-icons';
 
@@ -206,7 +206,7 @@ const RestaurantDetailsScreen: React.FC = () => {
                 </View>
               </View>
 
-              {/* <TouchableOpacity
+              <TouchableOpacity
                 style={styles.messageButton}
                 onPress={async () => {
                   if (isAuthenticated) {
@@ -227,7 +227,7 @@ const RestaurantDetailsScreen: React.FC = () => {
               >
                 <Ionicons name="chatbubble-outline" size={20} color="#24BAEC" />
                 <Text style={styles.messageButtonText}>Message Owner</Text>
-              </TouchableOpacity> */}
+              </TouchableOpacity>
             </View>
           </View>
         ))}

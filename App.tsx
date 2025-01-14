@@ -14,8 +14,8 @@ import ForgotPasswordScreen from "./screens/ForgotPasswordScreen";
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 // import Profile from './components/Profile';
-// import ChatScreen from './screens/ChatScreen';
-// import ChatRoomListScreen from './components/ChatRoomList';
+import ChatScreen from './screens/ChatScreen';
+import ChatRoomListScreen from './components/ChatRoomList';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -103,12 +103,12 @@ export default function App() {
               title: route.params?.subTopic || 'Adventure Sports',
             })}
           />
-          {/* <Stack.Screen
+          <Stack.Screen
             name="ChatRoomList"
             component={ChatRoomListScreen}
             options={{ title: "Your Chat Rooms" }}
-          /> */}
-          {/* <Stack.Screen name="ChatScreen" component={ChatScreen} options={{ title: "Chat" }} /> */}
+          />
+          <Stack.Screen name="ChatScreen" component={ChatScreen} options={{ title: "Chat" }} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
