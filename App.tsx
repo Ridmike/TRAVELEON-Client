@@ -10,10 +10,10 @@ import RestaurantDetailsScreen from './screens/RestaurentDetailsScreen';
 import EmergencyServicesDetailsScreen from './screens/EmergencyServicesDetailsScreen';
 import AdventureSportsDetailsScreen from './screens/AdventureSportsDetailsScreen';
 import ForgotPasswordScreen from "./screens/ForgotPasswordScreen";
-// import DetailsLocation from './screens/DetailsLocation';
+import DetailsLocation from './screens/DetailsLocation';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
-// import Profile from './components/Profile';
+import Profile from './components/Profile';
 import ChatScreen from './screens/ChatScreen';
 import ChatRoomListScreen from './components/ChatRoomList';
 
@@ -41,10 +41,10 @@ export default function App() {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
-          {/* <Stack.Screen name='Profile' component={Profile} options={{ headerTitle: '', headerBackTitleVisible: false }} /> */}
+          <Stack.Screen name='Profile' component={Profile} options={{ headerShown: false }} />
           <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
           <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} />
-          {/* <Stack.Screen name="Details" component={DetailsLocation} options={{ headerTitle: '', headerBackTitleVisible: false }} /> */}
+          <Stack.Screen name="Details" component={DetailsLocation} options={{ headerShown: false }} />
           <Stack.Screen
             name="Login"
             component={LoginScreen}
