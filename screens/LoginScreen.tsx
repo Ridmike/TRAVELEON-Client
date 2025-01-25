@@ -79,7 +79,7 @@ const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
           onChangeText={setPassword}
         />
         <TouchableOpacity onPress={togglePasswordVisibility} style={styles.eyeIcon}>
-          <Ionicons name={isPasswordVisible ? 'eye-off' : 'eye'} size={24} color="gray" />
+          <Ionicons name={isPasswordVisible ? 'eye' : 'eye-off' } size={24} color="gray" />
         </TouchableOpacity>
       </View>
       
@@ -125,15 +125,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 150,
+    width: 200,
     height: 150,
     alignSelf: 'center',
-    marginTop: 80,
-    marginBottom: 20,
+    marginTop: 100,
+    marginBottom: 40,
   },
   title: {
-    fontSize: 32,
-    fontWeight: 'bold',
+    fontSize: 30,
+    // fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 10,
   },

@@ -103,9 +103,7 @@ const ChatScreen: React.FC = () => {
           <Text style={styles.headerSubtitle}>Active Now</Text>
         </View>
         
-        <TouchableOpacity style={styles.callButton}>
-          <Ionicons name="call" size={24} color="#000" />
-        </TouchableOpacity>
+        
       </View>
 
       <KeyboardAvoidingView
@@ -150,12 +148,8 @@ const ChatScreen: React.FC = () => {
             multiline={true}
           />
           
-          <TouchableOpacity style={styles.attachButton}>
-            <Ionicons name="attach" size={24} color="#888" />
-          </TouchableOpacity>
-          
           <TouchableOpacity style={styles.sendButton} onPress={sendMessage}>
-            <Ionicons name="mic" size={24} color="#fff" />
+            <Ionicons name="send" size={24} color="#fff" />
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>

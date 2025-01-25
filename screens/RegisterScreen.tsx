@@ -105,7 +105,7 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({ navigation }) => {
             />
             <TouchableOpacity onPress={togglePasswordVisibility} style={styles.eyeIcon}>
               <Ionicons 
-                name={isPasswordVisible ? "eye-off-outline" : "eye-off-outline"} 
+                name={isPasswordVisible ? "eye" : "eye-off"} 
                 size={24} 
                 color="#999" 
               />
@@ -121,7 +121,7 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({ navigation }) => {
             />
             <TouchableOpacity onPress={togglePasswordVisibility} style={styles.eyeIcon}>
               <Ionicons 
-                name={isPasswordVisible ? "eye-off-outline" : "eye-off-outline"} 
+                name={isPasswordVisible ? "eye" : "eye-off"} 
                 size={24} 
                 color="#999" 
               />

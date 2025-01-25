@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, Linking, Platform, Alert } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';  
 
 const DetailsLocation: React.FC<{ route: any }> = ({ route }) => {
   const { location } = route.params;
@@ -84,8 +85,14 @@ const DetailsLocation: React.FC<{ route: any }> = ({ route }) => {
 
   return (
     <View style={[styles.container]}>
+      <TouchableOpacity 
+        style={styles.backButton} 
+        onPress={() => navigation.goBack()}
+      >
+        <Ionicons name="chevron-back" size={24} color="black" />
+      </TouchableOpacity>
+
       <ScrollView>
-        
         <Image 
           source={{ uri: location.image }}
           style={styles.mainImage} 

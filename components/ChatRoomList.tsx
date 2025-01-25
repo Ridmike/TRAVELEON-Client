@@ -153,18 +153,6 @@ const ChatRoomListScreen: React.FC = () => {
           <Text style={styles.headerSubtitle}>Active Chats</Text>
         </View>
         
-        <TouchableOpacity style={styles.callButton}>
-          <Ionicons name="ellipsis-horizontal" size={24} color="#000" />
-        </TouchableOpacity>
-      </View>
-
-      {/* Remove the existing titleRow and keep the rest of the content */}
-      <View style={styles.searchContainer}>
-        <TextInput
-          style={styles.searchInput}
-          placeholder="Search for chats & messages"
-          placeholderTextColor="#8E8E93"
-        />
       </View>
       
       {!currentUser ? (
@@ -240,8 +228,8 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 10,
-    paddingVertical: 10,
+    // paddingHorizontal: 10,
+    // paddingVertical: 10,
     borderBottomWidth: 1,
     borderBottomColor: "#E8E8E8",
     backgroundColor: '#FFFFFF',

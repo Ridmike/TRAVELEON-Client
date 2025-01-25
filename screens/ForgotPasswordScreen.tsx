@@ -8,8 +8,7 @@ const ForgotPasswordScreen: React.FC = () => {
 
   const handlePasswordReset = () => {
     const auth = getAuth();
-    setErrorMessage(""); // Clear previous error message
-
+    setErrorMessage(""); 
     if (email.trim() === "") {
       setErrorMessage("Please enter your email address.");
       return;
@@ -84,7 +83,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#BAD9CE",
+    backgroundColor: "#FFF",
     padding: 20,
   },
   title: {
