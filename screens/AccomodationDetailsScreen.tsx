@@ -36,11 +36,10 @@ const AccommodationDetailsScreen: React.FC = () => {
   // Hide the default header/navigation bar when component mounts
   useEffect(() => {
     navigation.setOptions({
-      headerShown: false, // This hides the default navigation header
+      headerShown: false, 
     });
     
     return () => {
-      // Restore default header behavior when component unmounts (if needed)
       navigation.setOptions({
         headerShown: true,
       });
@@ -247,7 +246,6 @@ const styles = StyleSheet.create({
   },
   appBar: {
     height: 60,
-   
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',

@@ -10,7 +10,7 @@ import { RootStackParamList } from "../App";
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, "ChatScreen">;
 
-// Define TypeScript interfaces for data structures
+
 interface ChatRoom {
   id: string;
   addPostName: string;
@@ -228,8 +228,6 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
-    // paddingHorizontal: 10,
-    // paddingVertical: 10,
     borderBottomWidth: 1,
     borderBottomColor: "#E8E8E8",
     backgroundColor: '#FFFFFF',
