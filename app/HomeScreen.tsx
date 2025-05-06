@@ -77,12 +77,9 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
             <TouchableOpacity onPress={toggleSidePanel} style={styles.menuButton}>
               <Ionicons name="menu-outline" size={28} color="#333" />
             </TouchableOpacity>
-            
-         
-            
+           
             <View style={styles.appBarRight}>
              
-              
               <TouchableOpacity onPress={toggleDropdown} style={styles.profileButton}>
                 <Ionicons name="person-circle" size={36} color="#FEE1E8" />
               </TouchableOpacity>
@@ -97,10 +94,12 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
               <Text style={styles.exploreText}>Explore the</Text>
               <View style={styles.beautifulWorldContainer}>
                 <Text style={styles.beautifulText}>Beautiful </Text>
-                <Text style={styles.worldText}>SriLanka</Text>
+                <View style={styles.sriLankaContainer}>
+                  <Text style={styles.worldText}>SriLanka</Text>
+                  <View style={styles.sriLankaUnderline} />
+                </View>
                 <Text style={styles.exclamationText}>!</Text>
               </View>
-              <View style={styles.underline} />
             </View>
 
             {/* Search Bar */}
@@ -222,7 +221,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   BodySecOuter: {
-    paddingTop: 20,
+    // paddingTop: 20,
   },
   heroContainer: {
     marginBottom: 40,
@@ -241,10 +240,22 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#222",
   },
+  sriLankaContainer: {
+    position: "relative",
+  },
   worldText: {
     fontSize: 38,
     fontWeight: "bold",
     color: "#FF7D45",
+  },
+  sriLankaUnderline: {
+    position: "absolute",
+    bottom: -5,
+    left: 0,
+    width: "100%",
+    height: 3,
+    backgroundColor: "#FF7D45",
+    borderRadius: 2,
   },
   exclamationText: {
     fontSize: 42,

@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#24BAEC',
   },
   destinationInfo: {
-    padding: 15,
+    padding: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -253,8 +253,8 @@ const styles = StyleSheet.create({
     color: '#222',
   },
   locationContainer: {
-    paddingHorizontal: 15,
-    paddingBottom: 15,
+    paddingHorizontal: 10,
+    paddingBottom: 14,
     flexDirection: 'row',
     alignItems: 'center',
   },
