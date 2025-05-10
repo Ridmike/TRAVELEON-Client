@@ -35,14 +35,13 @@ const VehicleDetailsScreen: React.FC = () => {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Hide the default header/navigation bar when component mounts
+  
   useEffect(() => {
     navigation.setOptions({
-      headerShown: false, // This hides the default navigation header
+      headerShown: false,
     });
     
     return () => {
-      // Restore default header behavior when component unmounts (if needed)
       navigation.setOptions({
         headerShown: true,
       });

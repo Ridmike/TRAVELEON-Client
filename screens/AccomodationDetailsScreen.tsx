@@ -33,7 +33,6 @@ const AccommodationDetailsScreen: React.FC = () => {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Hide the default header/navigation bar when component mounts
   useEffect(() => {
     navigation.setOptions({
       headerShown: false, 
@@ -148,7 +147,7 @@ const AccommodationDetailsScreen: React.FC = () => {
         
       </View>
 
-      {/* Existing ScrollView content */}
+      
       <ScrollView style={styles.scrollView}>
         {details.map((item, index) => (
           <View key={index} style={styles.card}>

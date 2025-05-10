@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Image, Text, Alert, TextInput, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
+import { StyleSheet, View, Image, Text, Alert, TextInput, TouchableOpacity, ScrollView, SafeAreaView, Platform } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { auth, db } from '../firebaseConfig'; 
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import { useNavigation } from "@react-navigation/native";
+import { Ionicons } from '@expo/vector-icons';
 
 const Profile = () => {
+  const navigation = useNavigation();
   const [profileImage, setProfileImage] = useState<string | null>(null);
   const [userData, setUserData] = useState<any>(null); 
   const [isEditing, setIsEditing] = useState(false);
@@ -76,7 +79,23 @@ const Profile = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
+      {/* Header */}
+      <View style={styles.header}>
+        <TouchableOpacity 
+          onPress={() => navigation.goBack()} 
+          style={styles.backButton}
+        >
+          <Ionicons name="chevron-back" size={28} color="#000" />
+        </TouchableOpacity>
+        <View style={styles.headerContent}>
+          <Text style={styles.headerTitle}>Profile</Text>
+        </View>
+      </View>
+
+      <ScrollView 
+        showsVerticalScrollIndicator={false} 
+        contentContainerStyle={styles.scrollContent}
+      >
         <View style={styles.headerContainer}>
           <View style={styles.header}>
             <TouchableOpacity style={styles.imageContainer} onPress={selectProfileImage}>
@@ -168,18 +187,32 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#f8f9fa",
+    marginTop: Platform.OS === 'ios' ? 50 : 30,
   },
   scrollContent: {
     paddingBottom: 30,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+  },
+  backButton: {
+    padding: 8,
+    marginRight: 8,
+  },
+  headerContent: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  headerTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   headerContainer: {
     alignItems: 'center',
     paddingTop: 30,
     paddingBottom: 20,
-  },
-  header: {
-    alignItems: 'center',
-    marginBottom: 15,
   },
   imageContainer: {
     position: 'relative',

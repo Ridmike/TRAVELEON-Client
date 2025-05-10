@@ -13,7 +13,7 @@ interface RestaurantItem {
   name: string;
   location: string;
   averagePrice: number;
-  images: string[]; // Array of image URLs
+  images: string[];
   contactNo: string;
   sellerId: string;
   timeId: string;
@@ -32,14 +32,12 @@ const RestaurantDetailsScreen: React.FC = () => {
   const { subTopic } = route.params as { subTopic: string };
   const navigation = useNavigation<any>();
 
-  // Hide the default header/navigation bar when component mounts
   useEffect(() => {
     navigation.setOptions({
-      headerShown: false, // This hides the default navigation header
+      headerShown: false,
     });
     
     return () => {
-      // Restore default header behavior when component unmounts (if needed)
       navigation.setOptions({
         headerShown: true,
       });

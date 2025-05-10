@@ -32,7 +32,6 @@ const TourGuidesInformation: React.FC = () => {
   const route = useRoute();
   const { subTopic } = route.params as { subTopic: string };
 
-  // Hide the default header/navigation bar when component mounts
   useEffect(() => {
     navigation.setOptions({
       headerShown: false,
