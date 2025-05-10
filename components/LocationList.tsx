@@ -81,6 +81,7 @@ const LocationList: React.FC<LocationListProps> = ({ searchQuery }) => {
     if (searchQuery.length > 0) {
       filtered = filtered.filter((location) =>
         location.name.toLowerCase().includes(searchQuery.toLowerCase())
+        || location.type.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
 
@@ -157,7 +158,7 @@ const LocationList: React.FC<LocationListProps> = ({ searchQuery }) => {
       </View>
 
       <FlatList
-        data={filteredLocations.slice(0, 3)}
+        data={filteredLocations.slice(0, )}
         keyExtractor={(item) => item.id}
         renderItem={renderLocationItem}
         contentContainerStyle={styles.destinationsContainer}

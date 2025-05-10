@@ -35,12 +35,7 @@ const DetailsLocation: React.FC<{ route: any }> = ({ route }) => {
   const fetchLocationCoordinates = async (locationId: string | number): Promise<{ latitude: number; longitude: number }> => {
     // Replace this with your actual API call to fetch coordinates
     try {
-      // Example API call:
-      // const response = await fetch(`https://your-api.com/locations/${locationId}/coordinates`);
-      // const data = await response.json();
-      // return { latitude: data.latitude, longitude: data.longitude };
       
-      // For demonstration, return mock data
       console.log(`Fetching coordinates for location ID: ${locationId}`);
       return new Promise(resolve => {
         setTimeout(() => {
@@ -101,17 +96,17 @@ const DetailsLocation: React.FC<{ route: any }> = ({ route }) => {
 
         {/* White card overlay */}
         <View style={styles.cardOverlay}>
-          {/* Location name and area */}
+          
           <Text style={styles.title}>{location.name}</Text>
           <Text style={styles.subtitle}>{location.type}</Text>
           
-          {/* About section */}
+          
           <View style={styles.aboutSection}>
             <Text style={styles.sectionTitle}>About Destination</Text>
             <Text style={styles.description}>{location.description}</Text>
           </View>
 
-          {/* Direction button with updated onPress handler */}
+          
           <TouchableOpacity style={styles.bookButton} onPress={handleDirections}>
             <Text style={styles.bookButtonText}>Direction</Text>
           </TouchableOpacity>
@@ -127,19 +122,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFFFF",
-  },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 20,
-    paddingVertical: 15,
-    backgroundColor: 'transparent',
-  },
-  headerTitle: {
-    fontSize: 24,
-    color: "white",
-    fontWeight: "500",
+    marginTop: Platform.OS === 'ios' ? 50 : 40,
   },
   backButton: {
     padding: 8,
@@ -153,7 +136,7 @@ const styles = StyleSheet.create({
   },
   mainImage: {
     width: "100%",
-    height: 300,
+    height: 320,
   },
   cardOverlay: {
     backgroundColor: "white",
