@@ -84,6 +84,11 @@ interface Topic {
       title: 'Public Transport',
       subTopics: ['Bus', 'Trains'],
       details: [] 
+    },
+    {
+      title: 'Pu',
+      subTopics: ['Bus', 'Trains'],
+      details: [] 
     }
   ];
   

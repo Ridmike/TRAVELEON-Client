@@ -5,6 +5,7 @@ import { auth, db } from '../firebaseConfig';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from '@expo/vector-icons';
+import { signOut } from 'firebase/auth';
 
 const Profile = () => {
   const navigation = useNavigation();
@@ -51,6 +52,14 @@ const Profile = () => {
       Alert.alert("Error", "Could not update profile.");
     }
   };
+
+  const handleLogout = async () => {
+      try {
+        await signOut(auth);
+      } catch (error) {
+        console.error("Error signing out:", error);
+      }
+    };
 
   // Handle profile image selection
   const selectProfileImage = async () => {
@@ -169,7 +178,7 @@ const Profile = () => {
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.logoutButton}
-                onPress={() => auth.signOut()}
+                onPress={() => handleLogout}
               >
                 <Text style={styles.logoutButtonText}>Logout</Text>
               </TouchableOpacity>

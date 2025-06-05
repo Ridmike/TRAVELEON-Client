@@ -79,9 +79,15 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
             </TouchableOpacity>
            
             <View style={styles.appBarRight}>
-             
-              <TouchableOpacity onPress={toggleDropdown} style={styles.profileButton}>
-                <Ionicons name="person-circle" size={36} color="#FEE1E8" />
+               <TouchableOpacity 
+                onPress={userName ? toggleDropdown : () => navigation.navigate("Login")} 
+                style={styles.profileButton}
+              >
+                <Ionicons 
+                  name="person-circle" 
+                  size={48} 
+                  color={userName ? "#24BAEC" : "#88C8E7"} 
+                />
               </TouchableOpacity>
             </View>
           </View>
@@ -132,30 +138,37 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
         <SidePanel isVisible={isSidePanelVisible} onClose={closeSidePanel} />
 
         {/* Dropdown Menu */}
-        {isDropdownVisible && (
+        {isDropdownVisible && userName && (
           <View style={styles.dropdownMenu}>
-            {userName ? (
-              <>
-                <TouchableOpacity style={styles.dropdownItem} onPress={() => navigation.navigate("Profile")}>
-                  <Text style={styles.dropdownText}>Profile</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.dropdownItem} onPress={handleLogout}>
-                  <Text style={styles.dropdownText}>Logout</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.dropdownItem} onPress={() => navigation.navigate("ChatRoomList")}>
-                  <Text style={styles.dropdownText}>Chat List</Text>
-                </TouchableOpacity>
-              </>
-            ) : (
-              <>
-                <TouchableOpacity style={styles.dropdownItem} onPress={() => navigation.navigate("Login")}>
-                  <Text style={styles.dropdownText}>Sign In</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.dropdownItem} onPress={() => navigation.navigate("Register")}>
-                  <Text style={styles.dropdownText}>Sign Up</Text>
-                </TouchableOpacity>
-              </>
-            )}
+            <TouchableOpacity 
+              style={styles.dropdownItem} 
+              onPress={() => {
+                navigation.navigate("Profile");
+                setDropdownVisible(false);
+              }}
+            >
+              <Ionicons name="person-outline" size={20} color="#666" />
+              <Text style={styles.dropdownText}>Profile</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={styles.dropdownItem} 
+              onPress={() => {
+                navigation.navigate("ChatRoomList");
+                setDropdownVisible(false);
+              }}
+            >
+              <Ionicons name="chatbubbles-outline" size={20} color="#666" />
+              <Text style={styles.dropdownText}>Messages</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+              style={[styles.dropdownItem, styles.logoutItem]} 
+              onPress={handleLogout}
+            >
+              <Ionicons name="log-out-outline" size={20} color="#FF4545" />
+              <Text style={[styles.dropdownText, styles.logoutText]}>Logout</Text>
+            </TouchableOpacity>
           </View>
         )}
       </View>
@@ -335,6 +348,8 @@ const styles = StyleSheet.create({
     zIndex: 999,
   },
   dropdownItem: {
+    flexDirection: "row",
+    gap: 10,
     paddingVertical: 8,
     paddingHorizontal: 10,
     borderBottomWidth: 1,
@@ -342,5 +357,14 @@ const styles = StyleSheet.create({
   },
   dropdownText: {
     fontSize: 16,
+  },
+  logoutItem: {
+    borderTopWidth: 1,
+    borderTopColor: "#eee",
+    marginTop: 5,
+  },
+  logoutText: {
+    color: "#FF4545",
+    fontWeight: "500",
   },
 });

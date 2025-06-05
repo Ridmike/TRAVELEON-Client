@@ -19,7 +19,7 @@ const RegisterScreen: React.FC<RegisterScreenProps> = ({ navigation }) => {
 
   React.useEffect(() => {
     navigation.setOptions({
-      headerShown: false // This will hide the default header with back button
+      headerShown: false 
     });
   }, [navigation]);
 

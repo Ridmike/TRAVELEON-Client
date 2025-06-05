@@ -4,6 +4,7 @@ import { useNavigation, NavigationProp } from '@react-navigation/native';
 import { RootStackParamList } from '../App';
 import { combinedDataset } from '../data/SidePanelDataSet';
 import { Ionicons } from '@expo/vector-icons';
+import { ModelCamera } from './ModelFunc';
 
 interface SidePanelProps {
   isVisible: boolean;
@@ -181,13 +182,9 @@ const SidePanel: React.FC<SidePanelProps> = ({ isVisible, onClose }) => {
                 </View>
               ))}
             </View>
-          </ScrollView>
-
+          </ScrollView>         
           <View style={styles.footer}>
-            <TouchableOpacity style={styles.exploreButton} activeOpacity={0.8}>
-              <Ionicons name="scan-outline" size={24} color="#24BAEC" />
-              <Text style={styles.exploreText}>Explore</Text>
-            </TouchableOpacity>
+            <ModelCamera />
           </View>
         </View>
       </Animated.View>
